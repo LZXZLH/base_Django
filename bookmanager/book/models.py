@@ -14,6 +14,9 @@ from django.db import models
 """
 class BookInfo(models.Model):
     name = models.CharField(max_length=32)
+    # 重写__str__方法来显示书籍名字
+    def __str__(self):
+        return self.name
 
 class PeopleInfo(models.Model):
     name = models.CharField(max_length=10)
